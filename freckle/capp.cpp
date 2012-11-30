@@ -3,14 +3,19 @@
 CApp::CApp()
 {
     this->surf_display = NULL;
-    this->surf_guardian_portraits = NULL;
+    this->surf_guardian_portraits = new SDL_Surface*[4];
+
+    for(int i=0; i<4; i++)
+    {
+        this->surf_guardian_portraits[i] = NULL;
+    }
 
     this->running = true;
 }
 
 CApp::~CApp()
 {
-
+    delete [] this->surf_guardian_portraits;
 }
 
 

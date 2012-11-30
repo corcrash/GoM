@@ -2,7 +2,12 @@
 
 void CApp::onCleanup()
 {
-  SDL_FreeSurface(this->surf_display);
+    for(int i=0; i<4; i++)
+    {
+        SDL_FreeSurface(this->surf_guardian_portraits[i]);
+    }
 
-  SDL_Quit();
+    SDL_FreeSurface(this->surf_display);
+
+    SDL_Quit();
 }
