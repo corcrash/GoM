@@ -2,5 +2,6 @@
 
 void CApp::onLoop()
 {
+    CAppStateManager::onLoop();
 
 }

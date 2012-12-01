@@ -2,7 +2,7 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= qt
 
-LIBS += -lSDL -lSDL_image
+LIBS += -lSDL -lSDL_image -lSDL_gfx
 
 SOURCES += main.cpp \
     freckle/csurface.cpp \
@@ -18,7 +18,9 @@ SOURCES += main.cpp \
     freckle/cappstatemanager.cpp \
     freckle/cappstateintro.cpp \
     freckle/cappstategame.cpp \
-    freckle/cappstate.cpp
+    freckle/cappstate.cpp \
+    freckle/cappstatemenu.cpp \
+    freckle/centitypanel.cpp
 
 HEADERS += \
     freckle/csurface.h \
@@ -29,5 +31,7 @@ HEADERS += \
     freckle/cappstatemanager.h \
     freckle/cappstateintro.h \
     freckle/cappstategame.h \
-    freckle/cappstate.h
+    freckle/cappstate.h \
+    freckle/cappstatemenu.h \
+    freckle/centitypanel.h
 

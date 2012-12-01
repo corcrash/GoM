@@ -31,6 +31,19 @@ bool CEntity::onLoad(char *file, int width, int height, int max_frames)
     return true;
 }
 
+bool CEntity::onLoadAlpha(char *file, int width, int height, int max_frames)
+{
+    if((this->surf_entity = CSurface::onLoadAlpha(file)) == NULL)
+        return false;
+
+    this->width = width;
+    this->height = height;
+
+    this->anim_control.max_frames = max_frames;
+
+    return true;
+}
+
 void CEntity::onLoop()
 {
     anim_control.onAnimate();

@@ -30,6 +30,7 @@ public:
     virtual ~CEntity();
 
     virtual bool onLoad(char* file, int width, int height, int max_frames);
+    virtual bool onLoadAlpha(char* file, int width, int height, int max_frames);
     virtual void onLoop();
     virtual void onRender(SDL_Surface* surf_display);
     virtual void onCleanup();

@@ -3,19 +3,12 @@
 CApp::CApp()
 {
     this->surf_display = NULL;
-    this->surf_guardian_portraits = new SDL_Surface*[4];
-
-    for(int i=0; i<4; i++)
-    {
-        this->surf_guardian_portraits[i] = NULL;
-    }
 
     this->running = true;
 }
 
 CApp::~CApp()
 {
-    delete [] this->surf_guardian_portraits;
 }
 
 
@@ -30,6 +23,7 @@ int CApp::onExecute()
 
     while(this->running)
     {
+        time_t time_start = SDL_GetTicks();
         while(SDL_PollEvent(&event))
         {
             this->onEvent(&event);
@@ -37,6 +31,11 @@ int CApp::onExecute()
 
         this->onLoop();
         this->onRender();
+
+        if((SDL_GetTicks() - time_start) < 30)
+        {
+            SDL_Delay(30 - (SDL_GetTicks() - time_start));
+        }
     }
 
     this->onCleanup();

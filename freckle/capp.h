@@ -5,6 +5,7 @@
 #include "csurface.h"
 #include "cevent.h"
 #include "canimation.h"
+#include "cappstatemanager.h"
 
 class CApp : public CEvent
 {
@@ -12,7 +13,6 @@ private:
   bool running;
 
   SDL_Surface *surf_display;
-  SDL_Surface **surf_guardian_portraits;
 
 public:
   CApp();

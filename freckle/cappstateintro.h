@@ -9,6 +9,10 @@ class CAppStateIntro : public CAppState
 private:
     static CAppStateIntro instance;
 
+    SDL_Surface *surf_logo;
+
+    int current_alpha;
+
 public:
     CAppStateIntro();
 

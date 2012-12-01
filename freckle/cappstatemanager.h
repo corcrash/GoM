@@ -7,6 +7,7 @@ enum
 {
     APPSTATE_NONE,
     APPSTATE_INTRO,
+    APPSTATE_MENU,
     APPSTATE_GAME
 };
 
