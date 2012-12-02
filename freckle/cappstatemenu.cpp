@@ -12,7 +12,7 @@ CAppStateMenu::CAppStateMenu()
     this->surf_background = NULL;
     for(int i=0; i<4; i++)
         this->surf_breafings[i] = NULL;
-    this->zoom_level = 20;
+    this->zoom_level = 15;
 }
 
 
@@ -35,16 +35,16 @@ void CAppStateMenu::onActivate()
     if(!this->panels[3].onLoadAlpha("data/boban_hover.png", "data/boban.png", 200, 212, 1))
         cout << "onLoad Boban" << endl;
 
-    if((this->surf_breafings[0] = CSurface::onLoadAlpha("data/breafing.png")) == NULL)
+    if((this->surf_breafings[0] = CSurface::onLoadAlpha("data/breaf_mita.png")) == NULL)
         cout << "Failed loading breafing" << endl;
 
-    if((this->surf_breafings[1] = CSurface::onLoadAlpha("data/breafing.png")) == NULL)
+    if((this->surf_breafings[1] = CSurface::onLoadAlpha("data/breaf_daca.png")) == NULL)
         cout << "Failed loading breafing" << endl;
 
-    if((this->surf_breafings[2] = CSurface::onLoadAlpha("data/breafing.png")) == NULL)
+    if((this->surf_breafings[2] = CSurface::onLoadAlpha("data/breaf_sale.png")) == NULL)
         cout << "Failed loading breafing" << endl;
 
-    if((this->surf_breafings[3] = CSurface::onLoadAlpha("data/breafing.png")) == NULL)
+    if((this->surf_breafings[3] = CSurface::onLoadAlpha("data/breaf_boban.png")) == NULL)
         cout << "Failed loading breafing" << endl;
 
     if((this->surf_background = CSurface::onLoadAlpha("data/background.jpg")) == NULL)
@@ -115,7 +115,7 @@ void CAppStateMenu::onMouseMove(int m_x, int m_y, int rel_x, int rel_y, bool lef
                 this->panels[i].hovered = false;
                 this->panels[i].onMouseOut();
                 this->breafings[i] = false;
-                this->zoom_level = 20;
+                this->zoom_level = 15;
             }
         }
     }
